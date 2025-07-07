@@ -4,13 +4,21 @@ models:
   - name: stg_orders
     columns:
       - name: order_id
+        description: The unique identifier for each order.
         tests:
           - not_null
           - unique
 
       - name: customer_id
+        description: The unique identifier for the customer who placed the order.
         tests:
           - not_null
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+      - name: order_date
+        description: The date when the order was placed.
+
+      - name: store_identifier
+        description : "{{doc('store_id_description')}}"
