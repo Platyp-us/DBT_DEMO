@@ -1,0 +1,17 @@
+version: 2
+
+models:
+    - name: enriched_customers
+      description: Enriched customer data with additional status information.
+      columns:
+        - name: customer_status
+          description: The status of the customer, enriched with additional information.
+          tests:
+            - not_null
+            - unique
+        - name: min_order_count
+          description: Minimum number of orders placed by the customer.
+          tests:
+            - not_null
+        - name: max_order_count
+          description: Maximum number of orders placed by the customer.
