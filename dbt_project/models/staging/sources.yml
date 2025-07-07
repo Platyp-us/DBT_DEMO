@@ -3,6 +3,7 @@ version: 2
 sources:
     - name: my_dbt_db
       schema: my_dbt_db
+      description: Source data for the dbt project, including raw customer and order data.
 
       tables:
         - name: raw_customers
